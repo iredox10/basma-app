@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "basma store backend",
+  "main": "server.js",
+  "author": "iredox10",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dompurify": "^2.4.0",
+    "express": "^4.18.2",
+    "jsdom": "^20.0.1",
+    "marked": "^4.1.1",
+    "mongoose": "^6.6.5",
+    "multer": "^1.4.5-lts.1",
+    "slugify": "^1.6.5"
+  },
+  "type": "module"
+}
