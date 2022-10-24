@@ -13,5 +13,5 @@ route.post('/add-product/:id', controller.add_product)
 
 route.get('/products', controller.view_products)
 
-route.delete('/d/:slug', controller.delete_p)
+route.delete('/delete/:slug', controller.delete_product)
 export default route

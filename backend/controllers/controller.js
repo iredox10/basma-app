@@ -10,14 +10,7 @@ export const add_category = async (req, res, next) => {
   }
 };
 
-export const view_categories = async (req, res, next) => {
-  try {
-    const categories = await Category.find();
-    res.json(categories);
-  } catch (err) {
-    res.json(err);
-  }
-};
+
 
 export const view_category = async (req, res, next) => {
   try {
@@ -27,6 +20,37 @@ export const view_category = async (req, res, next) => {
     res.json(err);
   }
 };
+
+export const update_product = async (req, res, next) => {
+  try {
+    const category = await category.findOneAndUpdate(
+      { slug: req.params.slug },
+      req.body
+    );
+    res.json(p);
+  } catch (err) {
+    res.json(err);
+  }
+};
+
+export const delete_category = async (req, res, next) => {
+  try {
+    const category = await Category.findOneAndDelete({ slug: req.params.slug });
+    res.json(category);
+  } catch (err) {
+    res.json(err);
+  }
+};
+
+export const view_categories = async (req, res, next) => {
+  try {
+    const categories = await Category.find();
+    res.json(categories);
+  } catch (err) {
+    res.json(err);
+  }
+};
+
 
 export const add_product = async (req, res, next) => {
   try {
@@ -56,7 +80,17 @@ export const view_products = async (req,res,next)=>{
       }
 }
 
-export const delete_p = async (req,res,next) =>{
+
+export const update_product = async (req,res,next) =>{
+  try{
+    const p = await Product.findOneAndUpdate({slug:req.params.slug},(req.body))
+    res.json(p)
+  }catch(err){
+    res.json(err)
+  }
+}
+
+export const delete_product = async (req,res,next) =>{
   try{
     const p = await Product.findOneAndDelete({slug:req.params.slug})
     res.json(p)

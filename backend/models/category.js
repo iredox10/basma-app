@@ -15,7 +15,10 @@ const category = new mongoose.Schema({
     type: String,
     required: true,
   },
-  pic: String,
+  pic: {
+    type: String,
+    required: true,
+  },
   slug: {
     type: String,
     required: true,
